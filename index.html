@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fala Presidente — Domínio Premium</title>
+  <meta name="description" content="falapresidente.com.br — domínio premium disponível para venda." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #09090b;
+      --surface: rgba(24, 24, 27, .5);
+      --border: rgba(39, 39, 42, .5);
+      --text: #fafafa;
+      --text-muted: #a1a1aa;
+      --text-dim: #71717a;
+      --accent: #eab308;
+      --accent-dim: rgba(234, 179, 8, .1);
+      --accent-border: rgba(234, 179, 8, .2);
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection { background: rgba(234, 179, 8, .3); }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem;
+    }
+
+    .logo {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -.03em;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+
+    .logo-dot {
+      width: .7rem;
+      height: .7rem;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    header a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: .875rem;
+      font-weight: 500;
+      transition: color .2s;
+    }
+
+    header a:hover { color: var(--accent); }
+
+    /* Main */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+
+    .hero {
+      max-width: 48rem;
+      animation: fadeUp .8s ease-out both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(1.25rem); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .3rem .75rem;
+      border-radius: 9999px;
+      background: var(--accent-dim);
+      color: var(--accent);
+      font-size: .7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      border: 1px solid var(--accent-border);
+      margin-bottom: 1.5rem;
+    }
+
+    .pulse-dot {
+      position: relative;
+      width: .5rem;
+      height: .5rem;
+    }
+
+    .pulse-dot::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: ping 1.5s cubic-bezier(0,0,.2,1) infinite;
+    }
+
+    .pulse-dot::after {
+      content: '';
+      position: relative;
+      display: block;
+      width: .5rem;
+      height: .5rem;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    @keyframes ping {
+      75%, 100% { transform: scale(2); opacity: 0; }
+    }
+
+    h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2.8rem, 8vw, 6rem);
+      font-weight: 500;
+      letter-spacing: -.02em;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 em {
+      font-style: italic;
+      background: linear-gradient(90deg, #facc15, #ca8a04);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: var(--text-muted);
+      max-width: 36rem;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: 1rem 2rem;
+      border-radius: 9999px;
+      background: #fff;
+      color: var(--bg);
+      font-size: 1.05rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform .2s, background .2s;
+    }
+
+    .cta:hover {
+      background: #e4e4e7;
+      transform: scale(1.04);
+    }
+
+    .cta svg {
+      width: 1.2rem;
+      height: 1.2rem;
+    }
+
+    /* Features */
+    .features {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-top: 4rem;
+      max-width: 52rem;
+      width: 100%;
+      text-align: left;
+      animation: fadeIn 1s ease-out .5s both;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    .feature {
+      padding: 1.5rem;
+      border-radius: 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+    }
+
+    .feature-icon {
+      width: 2rem;
+      height: 2rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .feature h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #e4e4e7;
+      margin-bottom: .4rem;
+    }
+
+    .feature p {
+      font-size: .875rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Footer */
+    footer {
+      padding: 1.5rem;
+      text-align: center;
+      border-top: 1px solid rgba(24, 24, 27, .8);
+    }
+
+    footer p {
+      font-size: .8rem;
+      color: var(--text-dim);
+      font-family: 'Inter', monospace;
+    }
+
+    footer span {
+      color: #d4d4d8;
+      font-weight: 600;
+    }
+
+    /* Responsive */
+    @media (min-width: 640px) {
+      header { padding: 2rem 3rem; }
+      .features { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (min-width: 768px) {
+      header { padding: 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <div class="logo-dot"></div>
+      falapresidente.com.br
+    </div>
+    <a href="mailto:contato@falapresidente.com.br">Contato</a>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div class="badge">
+        <span class="pulse-dot"></span>
+        Domínio Premium Disponível
+      </div>
+
+      <h1>Fala <em>Presidente</em></h1>
+
+      <p class="subtitle">
+        Um endereço digital de alto impacto, autoridade e memorabilidade.
+        Ideal para portais de notícias, fóruns políticos, campanhas ou projetos de liderança.
+      </p>
+
+      <a class="cta" href="mailto:contato@falapresidente.com.br?subject=Interesse no domínio falapresidente.com.br">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        Fazer uma Oferta
+      </a>
+    </div>
+
+    <div class="features">
+      <div class="feature">
+        <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+        <h3>Autoridade Imediata</h3>
+        <p>Um nome forte que transmite credibilidade e liderança desde o primeiro clique.</p>
+      </div>
+      <div class="feature">
+        <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <h3>Alcance Nacional</h3>
+        <p>Extensão .com.br perfeita para o público brasileiro e projetos de escala nacional.</p>
+      </div>
+      <div class="feature">
+        <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+        <h3>Potencial de Marca</h3>
+        <p>Fácil de lembrar, soletrar e compartilhar. Um ativo digital com alto potencial de valorização.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>desenvolvido por <span>N0B1T</span></p>
+  </footer>
+
+</body>
+</html>
+
