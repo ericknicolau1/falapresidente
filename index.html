@@ -3,113 +3,160 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fala Presidente — Domínio Premium</title>
-  <meta name="description" content="falapresidente.com.br — domínio premium disponível para venda." />
+  <title>Fala Presidente — Domínio de Elite</title>
+  <meta name="description" content="falapresidente.com.br — O Domínio de Elite para quem detém o Comando. Propriedade digital exclusiva à venda." />
+  <link rel="icon" type="image/png" href="public/logo_transparente.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #09090b;
-      --surface: rgba(24, 24, 27, .5);
-      --border: rgba(39, 39, 42, .5);
-      --text: #fafafa;
-      --text-muted: #a1a1aa;
-      --text-dim: #71717a;
-      --accent: #eab308;
-      --accent-dim: rgba(234, 179, 8, .1);
-      --accent-border: rgba(234, 179, 8, .2);
+      --bg: #08080a;
+      --bg-alt: #0c0c0f;
+      --surface: rgba(18, 18, 22, .7);
+      --surface-hover: rgba(24, 24, 30, .9);
+      --border: rgba(42, 42, 50, .4);
+      --border-light: rgba(60, 60, 70, .3);
+      --text: #F2F2F2;
+      --text-muted: #9a9aaa;
+      --text-dim: #5a5a6a;
+      --gold: #c9a84c;
+      --gold-light: #e8cc6e;
+      --gold-dark: #a07c2a;
+      --gold-dim: rgba(201, 168, 76, .08);
+      --gold-border: rgba(201, 168, 76, .15);
+      --cobalt: #1a4fa0;
+      --cobalt-light: #2a6fd4;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      font-family: 'Inter', system-ui, sans-serif;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
       background: var(--bg);
       color: var(--text);
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      letter-spacing: .02em;
+      overflow-x: hidden;
     }
 
-    ::selection { background: rgba(234, 179, 8, .3); }
+    ::selection { background: rgba(201, 168, 76, .3); color: #fff; }
 
-    /* Header */
-    header {
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.5rem;
+      padding: 1.25rem 3rem;
+      background: rgba(8, 8, 10, .85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      transition: all .3s ease;
     }
 
-    .logo {
-      font-size: 1.15rem;
-      font-weight: 700;
-      letter-spacing: -.03em;
+    .nav-logo {
       display: flex;
       align-items: center;
-      gap: .5rem;
+      gap: .75rem;
+      text-decoration: none;
+      color: var(--text);
     }
 
-    .logo-dot {
-      width: .7rem;
-      height: .7rem;
-      border-radius: 50%;
-      background: var(--accent);
+    .nav-logo img {
+      height: 1.8rem;
+      width: auto;
     }
 
-    header a {
+    .nav-logo span {
+      font-family: 'Montserrat', sans-serif;
+      font-size: .85rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
       color: var(--text-muted);
       text-decoration: none;
-      font-size: .875rem;
-      font-weight: 500;
-      transition: color .2s;
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      transition: color .3s;
     }
 
-    header a:hover { color: var(--accent); }
+    .nav-links a:hover { color: var(--gold); }
 
-    /* Main */
-    main {
-      flex: 1;
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 2rem 1.5rem;
       text-align: center;
+      padding: 8rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
     }
 
-    .hero {
-      max-width: 48rem;
-      animation: fadeUp .8s ease-out both;
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120%;
+      height: 80%;
+      background: radial-gradient(ellipse at center, rgba(201, 168, 76, .04) 0%, transparent 70%);
+      pointer-events: none;
     }
 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(1.25rem); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .badge {
+    .hero-badge {
       display: inline-flex;
       align-items: center;
-      gap: .5rem;
-      padding: .3rem .75rem;
+      gap: .6rem;
+      padding: .45rem 1.2rem;
       border-radius: 9999px;
-      background: var(--accent-dim);
-      color: var(--accent);
-      font-size: .7rem;
-      font-weight: 600;
+      background: var(--gold-dim);
+      color: var(--gold);
+      font-size: .65rem;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: .1em;
-      border: 1px solid var(--accent-border);
-      margin-bottom: 1.5rem;
+      letter-spacing: .15em;
+      border: 1px solid var(--gold-border);
+      margin-bottom: 2.5rem;
+      animation: fadeDown .8s ease-out both;
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-1rem); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
     .pulse-dot {
       position: relative;
-      width: .5rem;
-      height: .5rem;
+      width: .45rem;
+      height: .45rem;
     }
 
     .pulse-dot::before {
@@ -117,198 +164,635 @@
       position: absolute;
       inset: 0;
       border-radius: 50%;
-      background: var(--accent);
-      animation: ping 1.5s cubic-bezier(0,0,.2,1) infinite;
+      background: var(--gold);
+      animation: ping 2s cubic-bezier(0,0,.2,1) infinite;
     }
 
     .pulse-dot::after {
       content: '';
       position: relative;
       display: block;
-      width: .5rem;
-      height: .5rem;
+      width: .45rem;
+      height: .45rem;
       border-radius: 50%;
-      background: var(--accent);
+      background: var(--gold);
     }
 
     @keyframes ping {
-      75%, 100% { transform: scale(2); opacity: 0; }
+      75%, 100% { transform: scale(2.5); opacity: 0; }
     }
 
-    h1 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(2.8rem, 8vw, 6rem);
-      font-weight: 500;
-      letter-spacing: -.02em;
-      line-height: 1.1;
-      margin-bottom: 1.5rem;
+    .hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(3rem, 9vw, 6.5rem);
+      font-weight: 900;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      line-height: 1;
+      margin-bottom: 2rem;
+      animation: fadeUp .8s ease-out .1s both;
     }
 
-    h1 em {
-      font-style: italic;
-      background: linear-gradient(90deg, #facc15, #ca8a04);
+    .hero h1 .gold-text {
+      background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
 
-    .subtitle {
-      font-size: clamp(1rem, 2.5vw, 1.2rem);
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(1.5rem); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-subtitle {
+      font-size: clamp(.95rem, 2vw, 1.15rem);
+      font-weight: 500;
+      color: var(--gold);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      max-width: 38rem;
+      margin: 0 auto 1.5rem;
+      animation: fadeUp .8s ease-out .25s both;
+    }
+
+    .hero-desc {
+      font-size: clamp(.9rem, 1.8vw, 1.05rem);
       color: var(--text-muted);
       max-width: 36rem;
-      margin: 0 auto 2.5rem;
-      line-height: 1.7;
+      margin: 0 auto 3rem;
+      line-height: 1.8;
+      animation: fadeUp .8s ease-out .4s both;
     }
 
-    .cta {
+    .hero-cta {
       display: inline-flex;
       align-items: center;
-      gap: .5rem;
-      padding: 1rem 2rem;
+      gap: .6rem;
+      padding: 1rem 2.5rem;
       border-radius: 9999px;
-      background: #fff;
-      color: var(--bg);
-      font-size: 1.05rem;
-      font-weight: 600;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: #0a0a0a;
+      font-size: .85rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
       text-decoration: none;
-      transition: transform .2s, background .2s;
+      transition: transform .3s, box-shadow .3s;
+      box-shadow: 0 0 30px rgba(201, 168, 76, .15);
+      animation: fadeUp .8s ease-out .55s both;
     }
 
-    .cta:hover {
-      background: #e4e4e7;
-      transform: scale(1.04);
+    .hero-cta:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 50px rgba(201, 168, 76, .3);
     }
 
-    .cta svg {
-      width: 1.2rem;
-      height: 1.2rem;
+    .hero-cta svg {
+      width: 1.1rem;
+      height: 1.1rem;
     }
 
-    /* Features */
-    .features {
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .5rem;
+      color: var(--text-dim);
+      font-size: .6rem;
+      font-weight: 600;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      animation: fadeUp 1s ease-out 1s both;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 2.5rem;
+      background: linear-gradient(to bottom, var(--gold-border), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: .3; }
+      50% { opacity: 1; }
+    }
+
+    /* ── SECTIONS ── */
+    .section {
+      padding: 7rem 2rem;
+      position: relative;
+    }
+
+    .section:nth-child(even) {
+      background: var(--bg-alt);
+    }
+
+    .section-inner {
+      max-width: 72rem;
+      margin: 0 auto;
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.25rem;
-      margin-top: 4rem;
-      max-width: 52rem;
-      width: 100%;
-      text-align: left;
-      animation: fadeIn 1s ease-out .5s both;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to   { opacity: 1; }
+    .section-inner.reverse {
+      direction: rtl;
     }
 
-    .feature {
-      padding: 1.5rem;
+    .section-inner.reverse > * {
+      direction: ltr;
+    }
+
+    .section-img {
+      position: relative;
       border-radius: 1rem;
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+    }
+
+    .section-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: brightness(.85) contrast(1.05);
+      transition: transform .6s ease, filter .6s ease;
+    }
+
+    .section-img:hover img {
+      transform: scale(1.03);
+      filter: brightness(.95) contrast(1.05);
+    }
+
+    .section-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 1px solid var(--border-light);
+      border-radius: 1rem;
+      pointer-events: none;
+    }
+
+    .section-content {
+      position: relative;
+    }
+
+    .section-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+
+    .section-label::before {
+      content: '';
+      width: 2rem;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .section-content h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 800;
+      letter-spacing: .02em;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-content h2 .gold-text {
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section-content p {
+      font-size: .95rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+    }
+
+    .section-detail {
+      padding: 1.25rem 1.5rem;
       background: var(--surface);
       border: 1px solid var(--border);
+      border-radius: .75rem;
+      margin-bottom: .75rem;
     }
 
-    .feature-icon {
-      width: 2rem;
-      height: 2rem;
-      color: var(--accent);
-      margin-bottom: 1rem;
-    }
-
-    .feature h3 {
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: #e4e4e7;
+    .section-detail strong {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--gold);
       margin-bottom: .4rem;
     }
 
-    .feature p {
-      font-size: .875rem;
+    .section-detail span {
+      font-size: .85rem;
       color: var(--text-muted);
-      line-height: 1.5;
+      line-height: 1.6;
     }
 
-    /* Footer */
-    footer {
-      padding: 1.5rem;
+    /* ── CTA SECTION ── */
+    .cta-section {
+      padding: 7rem 2rem;
       text-align: center;
-      border-top: 1px solid rgba(24, 24, 27, .8);
+      position: relative;
+      background: var(--bg);
     }
 
-    footer p {
-      font-size: .8rem;
-      color: var(--text-dim);
-      font-family: 'Inter', monospace;
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-border), transparent);
     }
 
-    footer span {
-      color: #d4d4d8;
+    .cta-inner {
+      max-width: 42rem;
+      margin: 0 auto;
+    }
+
+    .cta-section h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-section p {
+      font-size: .95rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      padding: 1.1rem 3rem;
+      border-radius: 9999px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: #0a0a0a;
+      font-size: .85rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: transform .3s, box-shadow .3s;
+      box-shadow: 0 0 40px rgba(201, 168, 76, .12);
+      margin-bottom: 2rem;
+    }
+
+    .cta-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 60px rgba(201, 168, 76, .25);
+    }
+
+    .cta-btn svg {
+      width: 1.1rem;
+      height: 1.1rem;
+    }
+
+    .cta-email {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: .85rem;
       font-weight: 600;
+      letter-spacing: .08em;
+      color: var(--text-dim);
     }
 
-    /* Responsive */
-    @media (min-width: 640px) {
-      header { padding: 2rem 3rem; }
-      .features { grid-template-columns: repeat(3, 1fr); }
+    .cta-email a {
+      color: var(--gold);
+      text-decoration: none;
+      transition: color .3s;
     }
 
-    @media (min-width: 768px) {
-      header { padding: 3rem; }
+    .cta-email a:hover {
+      color: var(--gold-light);
+    }
+
+    /* ── QUOTE ── */
+    .quote-section {
+      padding: 5rem 2rem;
+      text-align: center;
+      background: var(--bg-alt);
+      position: relative;
+    }
+
+    .quote-section::before,
+    .quote-section::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+    }
+
+    .quote-section::before { top: 0; }
+    .quote-section::after { bottom: 0; }
+
+    .quote-mark {
+      font-size: 3rem;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 1rem;
+      opacity: .4;
+    }
+
+    .quote-text {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      font-weight: 600;
+      font-style: italic;
+      color: var(--text);
+      max-width: 36rem;
+      margin: 0 auto;
+      line-height: 1.6;
+      letter-spacing: .01em;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 3rem 2rem;
+      text-align: center;
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      max-width: 72rem;
+      margin: 0 auto;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .6rem;
+      margin-bottom: 1rem;
+      text-decoration: none;
+    }
+
+    .footer-logo img {
+      height: 2rem;
+      width: auto;
+      opacity: .7;
+    }
+
+    .footer-tagline {
+      font-family: 'Montserrat', sans-serif;
+      font-size: .65rem;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-dev {
+      font-size: .75rem;
+      color: var(--text-dim);
+    }
+
+    .footer-dev a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color .3s;
+    }
+
+    .footer-dev a:hover { color: var(--gold); }
+
+    .footer-copy {
+      font-size: .7rem;
+      color: var(--text-dim);
+      margin-top: .75rem;
+      letter-spacing: .04em;
+    }
+
+    /* ── SCROLL ANIMATIONS ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(2rem);
+      transition: opacity .8s ease-out, transform .8s ease-out;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+
+      .section-inner,
+      .section-inner.reverse {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        direction: ltr;
+      }
+
+      .section { padding: 4rem 1.5rem; }
+      .hero { padding: 7rem 1.5rem 3rem; }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 2.4rem; }
+      .hero-subtitle { font-size: .85rem; }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="logo">
-      <div class="logo-dot"></div>
-      falapresidente.com.br
+  <!-- NAV -->
+  <nav>
+    <a href="#hero" class="nav-logo">
+      <img src="public/logo_transparente.png" alt="Logo" />
+      <span>Fala Presidente</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#hero">Início</a></li>
+      <li><a href="#corporativo">Corporativo</a></li>
+      <li><a href="#midia">Mídia</a></li>
+      <li><a href="#politica">Política</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-badge">
+      <span class="pulse-dot"></span>
+      Propriedade Digital Exclusiva
     </div>
-    <a href="mailto:contato@falapresidente.com.br">Contato</a>
-  </header>
 
-  <main>
-    <div class="hero">
-      <div class="badge">
-        <span class="pulse-dot"></span>
-        Domínio Premium Disponível
+    <h1>FALA<br><span class="gold-text">PRESIDENTE</span></h1>
+
+    <p class="hero-subtitle">O Domínio de Elite para quem detém o Comando.</p>
+
+    <p class="hero-desc">
+      Esta propriedade digital exclusiva está à venda. Uma identidade única para quem precisa de voz, autoridade e conexão direta.
+    </p>
+
+    <a class="hero-cta" href="#contato">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+      Explorar Potencial
+    </a>
+
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- SECTION 1: CORPORATIVO -->
+  <section class="section" id="corporativo">
+    <div class="section-inner reveal">
+      <div class="section-img">
+        <img src="public/comunicacao_empresa.jpeg" alt="Comunicação Corporativa" loading="lazy" />
       </div>
+      <div class="section-content">
+        <div class="section-label">Uso Corporativo</div>
+        <h2>A Voz da Liderança<br><span class="gold-text">Transparente</span></h2>
+        <p>
+          No topo da pirâmide, a comunicação não pode ter ruídos. O falapresidente.com é a plataforma definitiva para CEOs e Conselhos de Administração que buscam um canal direto e blindado com seus acionistas, clientes e colaboradores.
+        </p>
+        <div class="section-detail">
+          <strong>Uso</strong>
+          <span>Portais de transparência, comunicados de RI (Relações com Investidores) e canais de Ombudsman executivo.</span>
+        </div>
+        <div class="section-detail">
+          <strong>Valor</strong>
+          <span>Transmite acessibilidade sem perder a imponência do cargo.</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <h1>Fala <em>Presidente</em></h1>
+  <!-- SECTION 2: MÍDIA -->
+  <section class="section" id="midia">
+    <div class="section-inner reverse reveal">
+      <div class="section-img">
+        <img src="public/talkshow.jpeg" alt="Talk Show e Mídia" loading="lazy" />
+      </div>
+      <div class="section-content">
+        <div class="section-label">Mídia & Talk Shows</div>
+        <h2>O Epicentro das<br><span class="gold-text">Grandes Ideias</span></h2>
+        <p>
+          Transforme o domínio no maior HUB de entrevistas e insights de negócios do país. Onde presidentes de setores estratégicos se encontram para pautar o mercado.
+        </p>
+        <div class="section-detail">
+          <strong>Uso</strong>
+          <span>Podcasts de alta gestão, séries de entrevistas com tomadores de decisão e eventos de networking executivo.</span>
+        </div>
+        <div class="section-detail">
+          <strong>Valor</strong>
+          <span>Nome curto, memorável e que já nasce com autoridade de marca.</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <p class="subtitle">
-        Um endereço digital de alto impacto, autoridade e memorabilidade.
-        Ideal para portais de notícias, fóruns políticos, campanhas ou projetos de liderança.
+  <!-- QUOTE -->
+  <div class="quote-section">
+    <div class="quote-mark">"</div>
+    <p class="quote-text">Tecnologia não é ferramenta.<br>É a própria infraestrutura do poder.</p>
+  </div>
+
+  <!-- SECTION 3: POLÍTICA -->
+  <section class="section" id="politica">
+    <div class="section-inner reveal">
+      <div class="section-img">
+        <img src="public/politica.jpeg" alt="Soberania Política" loading="lazy" />
+      </div>
+      <div class="section-content">
+        <div class="section-label">Soberania Política</div>
+        <h2>Conexão Direta com<br>o <span class="gold-text">Eleitorado</span></h2>
+        <p>
+          Em tempos de soberania digital, quem domina a narrativa domina as urnas. O falapresidente.com é o ativo ideal para campanhas de liderança nacional que buscam um meio de comunicação sem intermediários com a população.
+        </p>
+        <div class="section-detail">
+          <strong>Uso</strong>
+          <span>Central de propostas, canal de combate a fake news e plataforma de mobilização de base.</span>
+        </div>
+        <div class="section-detail">
+          <strong>Valor</strong>
+          <span>Um comando claro. Um destino óbvio. Uma marca inesquecível para 2026.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="contato">
+    <div class="cta-inner reveal">
+      <h2>Adquira esta<br><span class="gold-text">Propriedade Digital</span></h2>
+      <p>
+        Este domínio é um ativo de alta complexidade e potencial de valorização. Propostas comerciais serão analisadas exclusivamente via e-mail.
       </p>
-
-      <a class="cta" href="mailto:contato@falapresidente.com.br?subject=Interesse no domínio falapresidente.com.br">
+      <a class="cta-btn" href="mailto:contato@n0b1t.com?subject=Proposta%20Comercial%20-%20falapresidente.com.br">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-        Fazer uma Oferta
+        Enviar Proposta Agora
       </a>
+      <span class="cta-email"><a href="mailto:contato@n0b1t.com">contato@n0b1t.com</a></span>
     </div>
+  </section>
 
-    <div class="features">
-      <div class="feature">
-        <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-        <h3>Autoridade Imediata</h3>
-        <p>Um nome forte que transmite credibilidade e liderança desde o primeiro clique.</p>
-      </div>
-      <div class="feature">
-        <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-        <h3>Alcance Nacional</h3>
-        <p>Extensão .com.br perfeita para o público brasileiro e projetos de escala nacional.</p>
-      </div>
-      <div class="feature">
-        <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
-        <h3>Potencial de Marca</h3>
-        <p>Fácil de lembrar, soletrar e compartilhar. Um ativo digital com alto potencial de valorização.</p>
-      </div>
-    </div>
-  </main>
-
+  <!-- FOOTER -->
   <footer>
-    <p>desenvolvido por <span>N0B1T</span></p>
+    <div class="footer-inner">
+      <a href="https://n0b1t.com" target="_blank" rel="noopener noreferrer" class="footer-logo">
+        <img src="public/logo_transparente.png" alt="N0B1T" />
+      </a>
+      <div class="footer-tagline">Infraestrutura de Elite &nbsp;|&nbsp; Soberania Tecnológica</div>
+      <div class="footer-dev">
+        Developed by <a href="https://n0b1t.com" target="_blank" rel="noopener noreferrer">N0B1T</a>
+      </div>
+      <div class="footer-copy">&copy; 2026 N0B1T Technology Holding. Todos os direitos reservados.</div>
+    </div>
   </footer>
+
+  <!-- SCROLL REVEAL -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
 
 </body>
 </html>
